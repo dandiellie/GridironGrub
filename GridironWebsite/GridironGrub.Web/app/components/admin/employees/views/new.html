@@ -1,0 +1,84 @@
+﻿<h3>Register a New Employee</h3>
+<br />
+
+<div class="col-md-6">
+    <form ng-submit="vm.register()" class="form-horizontal">
+        <fieldset ng-disabled="vm.isLoading">
+            <legend>Register</legend>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input ng-model="vm.employee.username" type="text" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input ng-model="vm.employee.password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Confirm Password</label>
+                <div class="col-lg-10">
+                    <input ng-model="vm.employee.confirmPassword" type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save & Continue</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="col-md-6" ng-show="vm.showNewEmployeeDetails">
+    <form class="form-horizontal" ng-submit="vm.newDetails();">
+        <fieldset ng-disabled="vm.isLoading2">
+            <legend>Setting the Details of {{vm.employee.username}}</legend>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-3 control-label">Name</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="vm.employee.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Role</label>
+                <div class="col-lg-9">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="vm.employee.isRunner"> Runner
+                        </label> <br />
+                        <label>
+                            <input type="checkbox" ng-model="vm.employee.isVendor"> Vendor
+                        </label> <br />
+                        <label>
+                            <input type="checkbox" ng-model="vm.employee.isManager"> Manager
+                        </label> <br />
+                        <label>
+                            <input type="checkbox" ng-model="vm.employee.isAdmin"> Admin
+                        </label> <br />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-show="vm.employee.isVendor">
+                <label class="col-lg-3 control-label">Vendor For</label>
+                <div class="col-lg-9">
+                    <select class="form-control" ng-model="vm.employee.restaurant.id" ng-options="rest.id as rest.name for rest in vm.restaurants"><option value='' disabled>Choose Restaurant</option></select>
+                </div>
+            </div>
+            <div class="form-group" ng-show="vm.employee.isManager">
+                <label class="col-lg-3 control-label">Manager For</label>
+                <div class="col-lg-9">
+                    <select multiple="true" class="form-control" ng-model="vm.employee.restaurantIds" ng-options="rest.id as rest.name for rest in vm.restaurants"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

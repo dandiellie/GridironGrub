@@ -1,0 +1,17 @@
+General Stories
+- As a user, i want a login page, so i can sign up.
+- As a user, i want QR codes, so i can easily be linked with a Stadium and Area.
+- As a user, i want a shopping cart, so i can buy food.
+- As a user, i want a payment screen, so i can pay for food.
+
+- As an admin, i want timetable analytics, so i can see where the process can be improved.
+
+- As a runner, i want an order page, so i can pick up a job from restaurant.
+- As a runner, i want a scanner, so i can complete jobs and receive tips.
+
+- As a manager, i want an online menu, so users can view my products.
+- As a manager, i want an update page, so i can add, edit, and delete products.
+- As a manager, i want to see purchase history, so i can know what's popular and how products are selling.
+
+- As a vendor, i want an automatically refreshing page, so i can receive orders.
+- As a vendor, i want a button, so i can send completed orders to runners.

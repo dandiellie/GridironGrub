@@ -1,0 +1,63 @@
+﻿<div class="col-md-4 col-md-offset-8">
+    <form>
+        <div class="form-group">
+            <div class="input-group pull-right">
+                <input class="form-control" id="focusedInput" type="number" ng-model="vm.restId" placeholder="Vendor #" style="width: 500px;" ng-enter="vm.getSpecific(vm.restId);">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container-fluid" ng-show="vm.vendor.name">
+    <div class="row">
+        <div class="col-md-4" align="center">
+            <img alt="No Image Added" src={{vm.vendor.imageUrl}} class="primary-border admin-vendor-image" style="max-height:150px;" />
+        </div>
+        <div class="col-md-4">
+            <h1>{{vm.vendor.name}} Vendors</h1>
+            <h5>{{vm.vendor.description}}</h5> <br /><br />
+            <span style="cursor:pointer;" class="btn btn-success btn-xs" data-toggle="modal" data-target="#saveVendor" ng-click="vm.setVendor(null, vm.vendor.id, vm.vendor.name, vm.vendor.description);">Update Vendor</span>  <span style="cursor:pointer;" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#saveCategory" ng-click="vm.setCategory(vm.vendor.id);">Add New Category</span>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <hr />
+    <div class="row">
+        <table class="table table-striped table-hover">
+            <tbody ng-repeat="category in vm.vendor.categories">
+                <tr data-toggle="collapse" data-target="#cat{{category.id}}">
+                    <td><h4>{{category.name}}</h4></td>
+                </tr>
+                <tr id="cat{{category.id}}" class="collapse out">
+                    <td>
+                        <div class="pull-right">
+                            <span style="cursor:pointer;" class="btn btn-success btn-xs" data-toggle="modal" data-target="#saveCategory" ng-click="vm.setCategory(vm.vendor.id, category.name, category.id);">Update Category</span>  <span style="cursor:pointer;" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#saveItem" ng-click="vm.setItem(category.id);">Add New Item</span>
+                        </div>
+                        <br />
+                        <div class="no-bullet">
+                            <ul ng-repeat="item in category.items">
+                                <li>
+                                    <a style="cursor:pointer;" data-toggle="modal" data-target="#saveItem" ng-click="vm.setItem(category.id, item.id, item.name, item.imageUrl, item.price, item.isAlcohol);">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img alt="No Image Added" src={{item.imageUrl}} class="img-rounded img-responsive pull-right" style="max-width:75%; max-height:75px;" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h3>{{item.name}}</h3>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <h5>
+                                                    Price: {{item.price | currency}} <br />
+                                                    <i ng-show="item.isAlcohol">Alcoholic</i>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

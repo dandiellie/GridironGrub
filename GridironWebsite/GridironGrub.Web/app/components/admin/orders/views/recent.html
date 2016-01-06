@@ -1,0 +1,61 @@
+﻿<div class="col-md-4 col-md-offset-8">
+    <form>
+        <div class="form-group">
+            <div class="input-group pull-right">
+                <input type="text" class="form-control" placeholder="Search" ng-model="vm.search" style="width: 500px;">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container-fluid">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr class="table-header-color">
+                <th>
+                    <span ng-click="vm.sortType = 'orderId'; vm.sortReverse = !vm.sortReverse">
+                        Order #
+                    </span>
+                </th>
+                <th>
+                    <span ng-click="vm.sortType = 'area'; vm.sortReverse = !vm.sortReverse">
+                        Area
+                    </span>
+                </th>
+                <th>
+                    <span ng-click="vm.sortType = 'restaurant'; vm.sortReverse = !vm.sortReverse">
+                        Restaurant
+                    </span>
+                </th>
+                <th>
+                    <span ng-click="vm.sortType = 'runner'; vm.sortReverse = !vm.sortReverse">
+                        Runner
+                    </span>
+                </th>
+                <th>
+                    <span ng-click="vm.sortType = 'time'; vm.sortReverse = !vm.sortReverse">
+                        Time Open
+                    </span>
+                </th>
+                <th>
+                    <span ng-click="vm.sortType = 'total'; vm.sortReverse = !vm.sortReverse">
+                        Total
+                    </span>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in vm.recent | orderBy:vm.sortType:vm.sortReverse | filter:vm.search">
+                <td>{{order.id}}</td>
+                <td>{{order.area}}</td>
+                <td>{{order.restaurant}}</td>
+                <td>{{order.runner}}</td>
+                <td><span am-time-ago="order.timeOrdered"></span></td>
+                <td>{{order.total | currency}}</td>
+                <th><a class="btn btn-info btn-xs" data-toggle="modal" data-target="#order" ng-click="vm.getSpecific(order.id)">View Details</a></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

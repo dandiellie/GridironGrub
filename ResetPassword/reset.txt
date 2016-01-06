@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+<h2>Follow this link below to reset your password. Remember that the link will not work unless you are in the stadium.</h2>
+<br/><br/>
+<a href="http://localhost:49325/password/{{user}}">Reset Password!</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<div class="row">
+    <div class="col-md-4" align="center">
+        <img alt="No Image Added" src={{vm.parkSeat.logoUrl}} class="img-rounded img-responsive" style="max-height:150px;" />
+    </div>
+    <div class="col-md-8">
+        <h1>{{vm.parkSeat.name}} Seats</h1> <br /><br />
+        <span style="cursor:pointer;" class="btn btn-success btn-xs" data-toggle="modal" data-target="#updatePark" ng-click="vm.setPark();">Update Park Info</span>  <span style="cursor:pointer;" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#saveArea">Add New Area</span>
+    </div>
+</div>
+<hr />
+<div class="container-fluid">
+    <table class="table table-striped table-hover">
+        <tbody ng-repeat="area in vm.parkSeat.areas">
+            <tr data-toggle="collapse" data-target="#{{area.id}}">
+                <td><h4>{{area.name}}</h4></td>
+            </tr>
+            <tr id="{{area.id}}" class="collapse out">
+                <td>
+                    <div class="pull-right">
+                        <span style="cursor:pointer;" class="btn btn-success btn-xs" data-toggle="modal" data-target="#saveArea" ng-click="vm.setArea(area.name, area.id);">Update Area</span>  <span style="cursor:pointer;" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#updateSeat" ng-click="vm.setSeat(area.id, area.name);">Add New Seat</span>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr class="table-header-color">
+                                <th>
+                                    <span ng-click="vm.sortType = 'seatId'; vm.sortReverse = !vm.sortReverse">
+                                        Id #
+                                    </span>
+                                </th>
+                                <th>
+                                    <span ng-click="vm.sortType = 'section'; vm.sortReverse = !vm.sortReverse">
+                                        Section
+                                    </span>
+                                </th>
+                                <th>
+                                    <span ng-click="vm.sortType = 'row'; vm.sortReverse = !vm.sortReverse">
+                                        Row
+                                    </span>
+                                </th>
+                                <th>
+                                    <span ng-click="vm.sortType = 'seat'; vm.sortReverse = !vm.sortReverse">
+                                        Seat
+                                    </span>
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="seat in area.seats | orderBy:vm.sortType:vm.sortReverse">
+                                <td>{{seat.id}}</td>
+                                <td>{{seat.section}}</td>
+                                <td>{{seat.row}}</td>
+                                <td>{{seat.chair}}</td>
+                                <th><a class="btn btn-success btn-xs" data-toggle="modal" data-target="#updateSeat" ng-click="vm.setSeat(area.id, area.name, seat.id, seat.section, seat.row, seat.chair);">Update Seat</a></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

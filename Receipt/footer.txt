@@ -1,0 +1,44 @@
+               <div class="text-center">
+                   <div class="row">
+                       <div class="col-xs-9">
+                       </div>
+                       <div class="col-xs-3">
+                           <hr />
+                           <p>Subtotal: ${{cart.subtotal}}</p>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-xs-9">
+                       </div>
+                       <div class="col-xs-3">
+                           <p>Tax: ${{cart.taxes}}</p>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-xs-9">
+                       </div>
+                       <div class="col-xs-3">
+                           <p>Service Fee: ${{cart.convenienceFee}}</p>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-xs-9">
+                       </div>
+                       <div class="col-xs-3">
+                           <p>Area Fee: ${{cart.outOfAreaFee}}</p>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-xs-9">
+                       </div>
+                       <div class="col-xs-3">
+                           <p><b>Total:</b> ${{cart.total}}</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+</body>
+</html>

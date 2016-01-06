@@ -1,0 +1,21 @@
+<div ng-controller="itemController as vm">
+	<h2 class="has-header">{{vm.items.name}}</h2>
+
+	<ion-list>
+        <div ng-repeat="cat in vm.items.categories">
+          <ion-item class="item-stable"
+                    ng-click="vm.toggleGroup(cat)"
+                    ng-class="{active: vm.isGroupShown(cat)}">
+              <i class="icon" ng-class="vm.isGroupShown(cat) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            {{cat.name}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in cat.items"
+                    ng-show="vm.isGroupShown(cat)">
+            {{item.name}} {{item.price | currency}}
+          </ion-item>
+        </div>
+      </ion-list>
+
+</div>

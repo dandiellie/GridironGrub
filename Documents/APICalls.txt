@@ -1,0 +1,356 @@
+API Controllers
+*Items denoted with an asterisk are REQUIRED
+
+Customer
+	/api/customer/profile GET
+		- string FirstName
+		- string LastName
+		- string ImageUrl
+		- string Gender
+		- string Email
+		- DateTime Birthday
+	/api/customer/scan GET (int SeatId)
+		- string Park
+		- List<Restaurant> RestsInArea
+			- int Id
+			- string Name
+		- List<Restaurant> RestsOutArea
+			- int Id
+			- string Name
+	/api/customer/restaurant GET (int RestaurantId)
+		- string Name
+		- string LogoUrl
+		- List<Category> Categories
+			- string Name
+			- List<Items> Items
+				- int Id
+				- string Name
+				- string ImageUrl
+				- string Description
+				- decimal Price
+				- decimal Discount
+				- bool IsAlcohol
+	/api/customer/cart GET
+		- List<Items> Items
+			- int Id
+			- string Name
+			- string ImageUrl
+			- string Description
+			- decimal Price
+			- decimal Discount
+			- int Quantity
+			- bool IsAlcohol
+		- decimal Subtotal
+		- decimal Taxes
+		- string PersDesc
+		- DateTime? TimeOrdered
+		- DateTime? TimePrepared
+		- DateTime? TimeDelivered
+	/api/customer/navbarBadge GET
+		- int (# of items in order)
+				
+	/api/customer/register POST
+		- string Email*
+		- string Password*
+		- string ConfirmPassword*
+		- DateTime Birthdate*
+	/api/customer/postProfile POST
+		- string FirstName
+		- string LastName
+		- string ImageUrl
+		- string Gender
+	/api/customer/addItem POST
+		- string PersDesc
+		- bool SubmitOrder
+		- int ItemId
+		- int Quantity
+		- bool IsRetired
+		- int RemoveItemId
+
+Runner
+	/api/runner/jobsBySection GET
+		- List<Order> Orders
+			- int id
+			- string PersDesc
+			- string CustFirstName
+			- string CustLastName
+			- string RestName
+			- string Area
+			- string Section
+			- string Row
+			- string Chair
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+				- bool IsAlcohol
+	/api/runner/jobsByRestaurant GET
+		- List<Order> Orders
+			- int id
+			- string PersDesc
+			- string CustFirstName
+			- string CustLastName
+			- string RestName
+			- string Area
+			- string Section
+			- string Row
+			- string Chair
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+				- bool IsAlcohol
+	/api/runner/openOrders GET
+		- List<Order> Orders
+			- int id
+			- string PersDesc
+			- string CustFirstName
+			- string CustLastName
+			- string RestName
+			- string Area
+			- string Section
+			- string Row
+			- string Chair
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+				- bool IsAlcohol
+	/api/runner/recentOrders GET (DateTime? date) (if null date=today;)
+		- List<Order> Orders
+			- int id
+			- string RestName
+			- string Area
+			- string Section
+			- string Row
+			- string Chair
+			- DateTime TimeDelivered
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+				- bool IsAlcohol
+				
+	/api/runner/accept POST
+		- int OrderId*
+	/api/runner/complete POST
+		- int OrderId*
+
+Admin
+	/api/admin/park GET
+		- Park Park
+			- int Id
+			- string Name
+			- string LogoUrl
+			- decimal TaxRate
+			- List<Area> Areas
+				- int Id
+				- string Name
+				- List<Vendor> Vendors
+					- int Id
+					- string Name
+					- string Description
+					- List<Category> Categories
+						- int Id
+						- string Name
+						- List<Item> Items
+							- int Id
+							- string Name
+							- string ImageUrl
+							- string Description
+							- decimal Price
+							- decimal Discount
+							- int Views
+							- int Purchases
+							- bool IsAlcohol
+	/api/admin/vendor GET (int restId)
+		- int Id
+		- string Name
+		- string Description
+		- List<Category> Categories
+			- int Id
+			- string Name
+			- List<Item> Items
+				- int Id
+				- string Name
+				- string ImageUrl
+				- string Description
+				- decimal Price
+				- decimal Discount
+				- int Views
+				- int Purchases
+				- bool IsAlcohol
+	/api/admin/seats GET
+		- Park Park
+			- int Id
+			- string Name
+			- string LogoUrl
+			- List<Area> Areas
+				- int Id
+				- string Name
+				- List<Seat> Seats (sorted by Section and Row)
+					- int Id
+					- string Section
+					- string Row
+					- string Chair
+	/api/admin/specific GET (int orderIvmd)
+		- int id
+		- decimal Subtotal
+		- decimal Taxes
+		- decimal Total
+		- DateTime? TimeOrdered
+		- DateTime? TimePrepared
+		- DateTime? TimeDelivered
+		- string Runner
+		- string Restaurant
+		- string Area
+		- string Section
+		- string Row
+		- string Chair
+		- List<Item> Items
+			- string Name
+			- string ImageUrl
+			- int Quantity
+	/api/admin/open GET
+		- List<Order> Orders
+			- int id
+			- decimal Subtotal
+			- decimal Taxes
+			- decimal Total
+			- DateTime? TimeOrdered
+			- DateTime? TimePrepared
+			- DateTime? TimeDelivered
+			- string Runner //Name
+			- string Restaurant
+			- string Area
+			- string Section
+			- string Row
+			- string Chair
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+	/api/admin/recent GET (DateTime? date) (if null date=today;)
+		- List<Order> Orders
+			- int id
+			- decimal Subtotal
+			- decimal Taxes
+			- decimal Total
+			- DateTime? TimeOrdered
+			- DateTime? TimePrepared
+			- DateTime? TimeDelivered
+			- string Runner
+			- string Restaurant
+			- string Area
+			- string Section
+			- string Row
+			- string Chair
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+	/api/admin/restaurants GET
+		- List<RestaurantVM> Restaurants
+			- int Id
+			- string Name
+	/api/admin/employees GET
+		- List<ApplicationUser> Employees
+			- string Email
+			- bool IsRunner
+			- bool IsVendor
+			- bool IsManager
+			- bool IsAdmin
+	/api/admin/employee GET (string username)
+		- string Username
+		- string Name
+		- bool IsRunner
+		- bool IsVendor
+			- int RestaurantId
+		- bool IsManager
+			- List<int> RestaurantIds
+		- bool IsAdmin
+				
+	/api/admin/park POST
+		- string Name
+		- string LogoUrl
+		- decimal TaxRate
+	/api/admin/area POST (if Id for create new)
+		- int Id*
+		- string Name
+		- bool IsRetired
+	/api/admin/restaurant POST (if Id is unavailable, requires AreaId)
+		- int Id*
+		- int AreaId
+		- string Name
+		- bool IsRetired
+	/api/admin/updateEmployee POST
+		- string Username*
+		- string Name
+		- bool IsRunner*
+		- bool IsVendor*
+			- int RestaurantId
+		- bool IsManager*
+			- List<int> RestaurantIds
+		- bool IsAdmin*
+	/api/admin/seat POST
+		- int Id
+		- int AreaId
+		- string Section
+		- string Row
+		- string Chair
+		- bool IsRetired
+
+Vendor
+	/api/vendor/open GET
+		- List<Order> Orders
+			- int id
+			- DateTime TimeOrdered
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+				- bool IsAlcohol
+	/api/vendor/recent GET (DateTime? date) (if null date=today;)
+		- List<Order> Orders
+			- int id
+			- DateTime TimeOrdered
+			- DateTime TimePrepared
+			- List<Item> Items
+				- string Name
+				- string ImageUrl
+				- int Quantity
+				- bool IsAlcohol
+				
+	/api/vendor/complete POST
+		- int OrderId*
+
+Manager
+	/api/manager/restaurants GET
+		- List<Restaurant> Restaurants
+			- int Id
+			- string Name
+			- List<Category> Categories
+				- int Id
+				- string Name
+				- List<Item> Items
+					- int Id
+					- string Name
+					- string ImageUrl
+					- string Description
+					- decimal Price
+					- decimal Discount
+					- bool IsAlcohol
+					
+	/api/manager/category POST (if Id is unavailable, requires RestaurantId)
+		- int Id*
+		- int VendorId
+		- string Name
+		- bool IsRetired
+	/api/manager/item POST (if Id is unavailable, requires CategoryId)
+		- int Id*
+		- int CategoryId
+		- string Name
+		- string ImageUrl
+		- decimal Price
+		- bool IsAlcohol
+		- bool IsRetired

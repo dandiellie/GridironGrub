@@ -1,0 +1,118 @@
+﻿<!-- Save Vendor Modal -->
+<div id="saveVendor" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Vendor {{vm.vendorToSave.name}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal">
+                        <fieldset ng-disabled="vm.isLoading">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="Name" ng-model="vm.vendorToSave.name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="textArea" class="col-lg-3 control-label">Description</label>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" rows="3" id="textArea" ng-model="vm.vendorToSave.description"></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.saveVendor();">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Save Category Modal -->
+<div id="saveCategory" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Category {{vm.categoryToSave.name}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal">
+                        <fieldset ng-disabled="vm.isLoading">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="Name" ng-model="vm.categoryToSave.name">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button ng-show="vm.categoryToSave.id" type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.deleteCategory();">Delete</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.saveCategory();">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Save Item Modal -->
+<div id="saveItem" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Item {{vm.itemToSave.name}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal">
+                        <fieldset ng-disabled="vm.isLoading">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="Name" ng-model="vm.itemToSave.name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Image URL</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="Image URL" ng-model="vm.itemToSave.imageUrl">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Price</label>
+                                <div class="col-lg-9">
+                                    <input type="number" class="form-control" placeholder="Price" ng-model="vm.itemToSave.price">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-9 col-lg-offset-3">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="vm.itemToSave.isAlcohol"> Alcoholic
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button ng-show="vm.itemToSave.id" type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.deleteItem();">Delete</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.saveItem();">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

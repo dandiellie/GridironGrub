@@ -1,0 +1,66 @@
+﻿<div class="jumbotron">
+    <div class="container-fluid">
+        <div>
+            <h2>
+                <b>Section -</b> {{vm.welcome.section}}<br />
+                <b>Row -</b> {{vm.welcome.row}}<br />
+                <b>Seat -</b> {{vm.welcome.seat}}
+            </h2>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse bar-width text-center">
+    <div class="container">
+        <a class="btn btn-primary disabled"><h5><b>In</b>Area</h5></a>
+        <a ng-click="vm.goToOutArea();" class="btn btn-primary"><h5><b>Out</b>Area</h5></a>
+    </div>
+</nav>
+
+<div class="container reduce-margin-top">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h2><b>In</b>Area</h2>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-8">
+                    <span class="disc-item-list">Ordering from <b>In</b>Area will incur a $4 service fee but will <u>not</u> incur an extra $2 out of area fee.</span>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-repeat="rest in vm.rests.restsInArea">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <hr />
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-xs-3">
+                        <img ng-click="vm.goToItem(rest.id);" src="{{rest.imageUrl}}" class="thumbnail-item primary-border" />
+                    </div>
+                    <div class="col-xs-9 text-left">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4 ng-click="vm.goToItem(rest.id);">{{rest.name}}</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <span class="disc-item-list">{{rest.description}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+</div>
+<br />
+
+
+

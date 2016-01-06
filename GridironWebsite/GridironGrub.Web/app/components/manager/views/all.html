@@ -1,0 +1,21 @@
+﻿<div class="row">
+    <div class="col-md-4" align="center">
+        <img alt="No Image Added" src={{vm.park.logoUrl}} class="img-rounded img-responsive" style="max-height:150px;" />
+    </div>
+    <div class="col-md-8">
+        <h1>{{vm.park.name}} Vendors</h1>
+        Tax Rate: {{vm.park.taxRate * 100 | number:3}}% <br /><br />
+    </div>
+</div>
+<hr />
+<div class="container-fluid no-bullet">
+    <ul ng-repeat="vendor in vm.park.vendors">
+        <li>
+            <span ng-click="vm.goToSpecific(vendor.id);" style="cursor:pointer;">
+                <h4>{{vendor.id}} - {{vendor.name}}</h4>
+                <h5>{{vendor.description}}</h5>
+            </span>
+        </li>
+        <hr />
+    </ul>
+</div>

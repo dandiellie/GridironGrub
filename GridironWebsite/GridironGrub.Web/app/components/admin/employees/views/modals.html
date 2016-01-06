@@ -1,0 +1,60 @@
+﻿<!-- Update Employee Modal -->
+<div id="updateEmployee" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Update Employee {{vm.employee.username}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal">
+                        <fieldset ng-disabled="vm.isLoading">
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-lg-3 control-label">Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="Name" ng-model="vm.employee.name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Role</label>
+                                <div class="col-lg-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="vm.employee.isRunner"> Runner
+                                        </label> <br />
+                                        <label>
+                                            <input type="checkbox" ng-model="vm.employee.isVendor"> Vendor
+                                        </label> <br />
+                                        <label>
+                                            <input type="checkbox" ng-model="vm.employee.isManager"> Manager
+                                        </label> <br />
+                                        <label>
+                                            <input type="checkbox" ng-model="vm.employee.isAdmin"> Admin
+                                        </label> <br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-show="vm.employee.isVendor">
+                                <label class="col-lg-3 control-label">Vendor For</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" ng-model="vm.employee.restaurant.id" ng-options="rest.id as rest.name for rest in vm.restaurants"><option value='' disabled>Choose Restaurant</option></select>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-show="vm.employee.isManager">
+                                <label class="col-lg-3 control-label">Manager For</label>
+                                <div class="col-lg-9">
+                                    <select multiple="true" class="form-control" ng-model="vm.employee.restaurantIds" ng-options="rest.id as rest.name for rest in vm.restaurants"></select>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.updateEmployee();">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

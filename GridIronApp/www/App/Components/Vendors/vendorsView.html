@@ -1,0 +1,19 @@
+<div class="list" ng-controller="vendorsController as vm">
+	<h2 class="has-header">{{vm.rests.park}} Vendors</h2>
+
+	<div ng-repeat="rest in vm.rests.restsInArea">
+		<a class="item" ng-click="vm.goToItem(rest.id)">
+		<h2>{{rest.name}}</h2>
+		<p>{{rest.description}}</p>
+		</a>
+	</div>
+
+	<hr width="75%" color="#ff0000" size="4"/>
+
+	<div ng-repeat="rest in vm.rests.restsOutArea">
+		<a class="item" ng-click="vm.goToItem(rest.id)">
+		<h2>{{rest.name}}</h2>
+		<p>{{rest.description}}</p>
+		</a>
+	</div>
+</div>

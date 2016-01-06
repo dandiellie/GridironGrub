@@ -1,0 +1,31 @@
+<div ng-controller="orderController as vm">
+	<h2 class="has-header">Welcome to {{vm.welcome.park}}!</h2>
+	
+	<div class="list card">
+
+	 	<div class="item item-body" style="background-image: url(http://www.stlcardinalbaseball.com/wp-content/uploads/2011/04/minute-maid-park-orange-train.jpg); height: 400px;"></div>
+
+		<br/>
+
+		<hr width="80%" size="8" align="center">
+
+		<h2>You are in</h2>
+
+		<h4>Section <u>{{vm.welcome.section}}</u> </h4> 
+		<h4>Row <u>{{vm.welcome.row}}</u> </h4>
+		<h4>Seat <u>{{vm.welcome.seat}}</u> </h4>
+
+		<div class="item tabs tabs-secondary tabs-icon-center">
+
+		   	<a class="tab-item" href="#">
+		     	<i class="icon ion-share">Share</i>
+		     	Share
+		   	</a>
+		</div>
+
+		<button class="button button-full button-positive" ng-click="vm.getRestaurants()">
+		 	Grub!
+		</button>
+
+	</div>
+</div>

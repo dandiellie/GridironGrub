@@ -1,0 +1,51 @@
+﻿<div class="container" style="margin-top: -40px;">
+    <div class="row text-center">
+        <div class="col-xs-12">
+            <h2><b>Describe</b>Yourself</h2>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-6">
+            <span class="disc-item-list">Help us out! We want to make things as convenient as possible for you</span>
+        </div>
+        <div class="col-xs-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <hr />
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label for="inputEmail" class="col-xs-2 control-label">Email</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="vm.description.receiptEmail">
+                    <span class="help-block"><i>Your receipt will be sent via Email.</i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="textArea" class="col-xs-2 control-label">Description</label>
+                <div class="col-xs-10">
+                    <textarea class="form-control" rows="3" id="textArea" placeholder="Description" ng-model="vm.description.persDesc"></textarea>
+                    <span class="help-block">For Example: <i>"I'm John Doe, the tall guy rocking the face paint and foam finger!"</i></span>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="btn-group btn-group-justified navbar-fixed-bottom">
+        <a ng-click="vm.goToPayment();" class="btn btn-default">Continue</a>
+        <a ng-click="vm.saveDescription();" class="btn btn-primary">Save and Continue</a>
+    </div>
+
+</div>
+

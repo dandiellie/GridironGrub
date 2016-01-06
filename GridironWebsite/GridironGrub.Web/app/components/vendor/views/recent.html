@@ -1,0 +1,28 @@
+﻿<div class="container">
+    <h1>Recent Orders</h1>
+    <div ng-repeat="order in vm.recent">
+        <div class="row">
+            <div class="col-md-5">
+                <h3><span am-time-ago="order.timePrepared"></span></h3>
+                <h4>Ordered On <time>{{order.timeOrdered | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</time></h4>
+                <h4>Completed On <time>{{order.timePrepared | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</time></h4>
+                <h4>Order # {{order.id}}</h4>
+            </div>
+            <div class="col-md-7" ng-repeat="item in order.items">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img id="profileImg" alt="No Image Added" src={{item.imageUrl}} class="img-rounded img-responsive pull-right" style="max-height:75px; max-width:75%;" />
+                    </div>
+                    <div class="col-md-8">
+                        <h3>{{item.name}}</h3>
+                        <h4>Quantity: {{item.quantity}}</h4>
+                        <i ng-show="item.isAlcoholic">Alcoholic</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+    </div>
+</div>

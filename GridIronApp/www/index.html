@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/app.js"></script>
+
+
+
+  </head>
+  <body ng-app="starter">
+
+  <ion-nav-bar class="bar bar-header bar-balanced">
+  </ion-nav-bar>
+
+  <ion-nav-view>
+    <!--This is where the view is!-->
+  </ion-nav-view>
+
+  <div class="bar bar-footer bar-balanced" ng-controller="footerController as vm">
+    <div>
+      <button title="Login" ui-sref="login">Login</button>
+    </div>
+    <div>
+      <button title="Profile" ui-sref="profile">Profile</button>
+    </div>
+    <div>
+      <button title="Scan" ng-click="vm.goToScan();">Scan Now</button>
+    </div>
+        <div>
+      <button title="Order" ui-sref="order">Order</button>
+    </div>
+  </div>
+
+
+  <!--This is the PayPal/Braintreescript--> 
+   <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+  <!-- Module and Routes -->
+  <script type="text/javascript" src="App/app.module.js"></script>
+  <script type="text/javascript" src="App/app.routes.js"></script>
+  <script type="text/javascript" src="footerController.js"></script>
+
+  <!-- Controllers and Services -->
+
+    <!--Braintree-->
+      <script src="App/Components/Braintree/braintreeController.js" ></script>
+      <script src="App/Components/Braintree/braintreeService.js" ></script> 
+  <!--Braintree-->
+  <script src="App/Components/Braintree/BraintreeController.js"></script>
+  <script src="App/Components/Braintree/braintreeService.js"></script>
+  <script src="App/Components/Scan/ScanController.js"></script>
+  <script src="App/Components/Scan/scanService.js"></script>
+    <!--Login/Register-->
+      <script src="App/Components/Login/loginController.js" ></script>
+      <script src="App/Components/Login/loginService.js" ></script>
+      <script src="App/Components/Login/authService.js" ></script>
+      <script src="App/Components/Login/registerService.js" ></script>
+      <script src="App/Components/Login/registerController.js" ></script>
+    <!--Item-->
+      <script src="App/Components/Item/itemController.js" ></script>
+      <script src="App/Components/Item/itemService.js" ></script>
+    <!--Order-->
+      <script src="App/Components/Order/orderController.js" ></script>
+      <script src="App/Components/Order/orderService.js" ></script>
+    <!--Profile-->
+      <script src="App/Components/Profile/profileService.js" ></script>
+      <script src="App/Components/Profile/profileController.js" ></script>
+    <!--Scanner-->
+      <script src="App/Components/Scan/scanController.js" ></script>
+      <script src="App/Components/Scan/scanService.js" ></script>
+    <!--Seat-->
+      <script src="App/Components/Seat/seatController.js" ></script>
+      <script src="App/Components/Seat/seatService.js" ></script>
+    <!--Start-->
+      <script src="App/Components/Start/startController.js" ></script>
+      <script src="App/Components/Start/startService.js" ></script>
+    <!--Vendors-->
+      <script src="App/Components/Vendors/vendorsController.js" ></script>
+      <script src="App/Components/Vendors/vendorsService.js" ></script>
+
+  </body>
+</html>

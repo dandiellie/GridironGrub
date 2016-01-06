@@ -1,0 +1,17 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btn-group btn-group-justified">
+                <a ng-click="vm.goToOpen();" class="btn btn-default">Open Orders</a>
+                <a ng-click="vm.goToRecent();" class="btn btn-default">Recent Orders</a>
+            </div>
+            <br />
+            <div class="row" ng-show="vm.showOpen">
+                <div ng-include="'/app/components/vendor/views/open.html'"></div>
+            </div>
+            <div class="row" ng-show="vm.showRecent">
+                <div ng-include="'/app/components/vendor/views/recent.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

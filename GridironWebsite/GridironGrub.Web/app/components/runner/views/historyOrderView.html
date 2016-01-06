@@ -1,0 +1,72 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="btn-group btn-group-justified">
+            <a href="/runner" class="btn btn-default">Profile</a>
+            <a href="/allOrder" class="btn btn-default">All</a>
+            <a href="/activeOrder" class="btn btn-default">Active</a>
+            <a href="/historyOrder" class="btn btn-default">History</a>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <b><h1>Orders History</h1></b>
+        <hr />
+        <div ng-repeat="order in vm.historyOrders">
+            <div class="panel panel-primary">
+                <div class="panel-heading" data-toggle="collapse" href="#collapse{{order.id}}">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h2>{{order.restaurant}}</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div class="row">
+                                    <h4>{{order.area}}</h4>
+                                    <h4>{{order.section}} - {{order.row}} - {{order.chair}}</h4>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="row">
+                                    <h4>{{order.total | currency}}</h4>
+                                    <h4 ng-show="order.containsAlcohol"><i>Alcoholic</i></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="collapse{{order.id}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row" ng-repeat="item in order.items">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <h5 style="margin-left:10px;">{{item.name}}</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="col-sm-3">
+                                            <img style="max-height:75px; max-width:75px;" src="{{item.imageUrl}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <p><i>{{item.isAlcohol ? "Alcoholic" : ""}}</i></p>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <p><b>Quantity:</b> {{item.quantity}}</p>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <p><b>Price:</b> {{item.price}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

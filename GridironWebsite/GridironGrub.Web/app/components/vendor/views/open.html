@@ -1,0 +1,30 @@
+﻿<div class="container">
+    <h1>Open Orders</h1>
+    <div ng-repeat="order in vm.open">
+        <div class="row">
+            <div class="col-md-3">
+                <h3><span am-time-ago="order.timeOrdered"></span></h3>
+                <h4>Ordered At <time>{{order.timeOrdered | amDateFormat: 'h:mm a' }}</time></h4>
+                <h4>Order # {{order.id}}</h4>
+            </div>
+            <div class="col-md-6" ng-repeat="item in order.items">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img id="profileImg" alt="No Image Added" src={{item.imageUrl}} class="img-rounded img-responsive pull-right" style="max-height:75px; max-width:75%;" />
+                    </div>
+                    <div class="col-md-8">
+                        <h3>{{item.name}}</h3>
+                        <h4>Quantity: {{item.quantity}}</h4>
+                        <i ng-show="item.isAlcoholic">Alcoholic</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <a ng-click="vm.complete(order.id);" class="btn btn-primary btn-lg">Complete Order</a>
+            </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+    </div>
+</div>

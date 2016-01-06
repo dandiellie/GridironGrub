@@ -1,0 +1,24 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btn-group btn-group-justified">
+                <a ng-click="vm.goToSeats();" class="btn btn-default">Seats</a>
+                <a ng-click="vm.goToVendors();" class="btn btn-default">Vendors</a>
+                <a ng-click="vm.goToSpecific();" class="btn btn-default">Find a Vendor</a>
+            </div>
+            <br />
+            <div class="row" ng-show="vm.showSeats">
+                <div ng-include="'/app/components/admin/park/views/seats.html'"></div>
+            </div>
+            <div class="row" ng-show="vm.showVendors">
+                <div ng-include="'/app/components/admin/park/views/vendors.html'"></div>
+            </div>
+            <div class="row" ng-show="vm.showSpecific">
+                <div ng-include="'/app/components/admin/park/views/specific.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modals-->
+<div ng-include="'/app/components/admin/park/views/modals.html'"></div>

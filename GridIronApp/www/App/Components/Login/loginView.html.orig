@@ -1,0 +1,75 @@
+<h2 class="has-header">Login</h2>
+
+<div ng-controller="LoginController as vm">
+	<form ng-submit="vm.login">
+		<div class="list">
+		  <label class="item item-input">
+		    <input type="email" placeholder="Email" ng-model="vm.username">
+		  </label>
+		  <label class="item item-input">
+		    <input type="password" placeholder="Password" ng-model="vm.password">
+		  </label>
+		  <p>Password must have a minimum of 6 characters</p>
+		  <label class="item item-input">
+		    <button class="button button-full button-positive" type="submit" ng-click="vm.login()">Submit
+		    </button>
+		  </label>
+		</div>
+	</div>
+</div>
+
+<h2>Register</h2>
+
+<div ng-controller="RegisterController as vm">
+	<div class="list">
+<<<<<<< HEAD
+		<fieldset ng-disabled="vm.isLoading">
+			<label class="item item-input">
+				<input type="email" placeholder="Email" ng-model="vm.email">
+			</label>
+			<label class="item item-input">
+				<input type="date" placeholder="Birthday" ng-model="vm.birthday">
+			</label>
+			<label class="item item-input">
+				<input type="password" placeholder="Password" ng-model="vm.password">
+			</label>
+			<label class="item item-input">
+				<input type="password" placeholder="Comfirm Password" ng-model="vm.confirmPassword">
+			</label>
+			<label class="item item-input">
+				<input type="submit" ng-click="vm.register()">
+			</label>
+		</fieldset>
+=======
+<!-- 	<label class="item item-input">
+		    <input type="text" placeholder="First Name">
+		</label>
+		<label class="item item-input">
+		    <input type="text" placeholder="Last Name">
+		</label>
+		<label class="item item-input">
+		    <input type="text" placeholder="Birthday">
+		</label> -->
+		<label class="item item-input">
+			<input type="email" placeholder="Email" ng-model="vm.email">
+		</label>
+<!-- 		<label class="item item-input">
+			<input type="datetime-local" placeholder="Birthday" ng-model="vm.birthday">
+		</label> -->
+		<label class="item item-input">
+			<input type="password" placeholder="Password" ng-model="vm.password">
+		</label>
+		<label class="item item-input">
+			<input type="password" placeholder="Comfirm Password" ng-model="vm.confirmPassword">
+		</label>
+		<label class="item item-input">
+			<button class="button button-full button-positive" type="submit" ng-click="vm.register()">Register
+			</button>
+		</label>
+>>>>>>> ffaf6155f0716c6642e89e839062bbd9500d2909
+	</div>
+	<label class="item item-input">
+			<button class="button button-full button-positive" type="submit">Register Later, I Hunger!
+			</button>
+		</label>
+</div>

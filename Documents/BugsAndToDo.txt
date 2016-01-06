@@ -1,0 +1,10 @@
+Needs Work
+-	Security and Auth for API Controllers and Navbar Tabs.
+-	Change Password for Employees.
+-	Personal accounts for customers.
+-	Remembering payment methods for seats.
+-	Warn people buying alcohol.
+-	Warn runners delivering alcohol.
+-	Park TaxRate only saves 2 decimal places ????
+-	Sorts are broken on Admin's employee tables
+-	Delete a Seat

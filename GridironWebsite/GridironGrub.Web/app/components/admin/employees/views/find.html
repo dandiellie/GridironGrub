@@ -1,0 +1,76 @@
+﻿<div class="col-md-4 col-md-offset-8">
+    <form>
+        <div class="form-group">
+            <div class="input-group pull-right">
+                <input type="number" class="form-control" ng-model="vm.employee.username" placeholder="Email" style="width: 500px;" ng-enter="vm.getEmployee(vm.employee.username);">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container-fluid" ng-show="vm.employee.username">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <h1>Employee Info</h1>
+        </div>
+        <div class="row">
+            <a class="btn btn-success btn-xs" data-toggle="modal" data-target="#updateEmployee" ng-click="vm.getRestaurants();">Update Employee</a>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-2">
+                Email
+            </div>
+            <div class="col-md-10">
+                {{vm.employee.username}}
+            </div>
+        </div>
+        <div class="row" ng-show="vm.employee.name">
+            <div class="col-md-2">
+                Name
+            </div>
+            <div class="col-md-10">
+                {{vm.employee.name}}
+            </div>
+        </div>
+        <br />
+        <div class="row" ng-show="vm.employee.isRunner">
+            <div class="col-md-2">
+                Runner
+            </div>
+            <div class="col-md-10">
+
+            </div>
+        </div>
+        <br />
+        <div class="row" ng-show="vm.employee.isVendor">
+            <div class="col-md-2">
+                Vendor
+            </div>
+            <div class="col-md-10">
+                {{vm.employee.restaurant.name}}
+            </div>
+        </div>
+        <br />
+        <div class="row" ng-show="vm.employee.isManager">
+            <div class="col-md-2">
+                Manager
+            </div>
+            <div class="col-md-10">
+                <div ng-repeat="rest in vm.employee.restaurants">
+                    {{rest.name}}
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="vm.employee.isAdmin">
+            <div class="col-md-2">
+                Admin
+            </div>
+            <div class="col-md-10">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>

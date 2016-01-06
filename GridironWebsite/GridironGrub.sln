@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridironGrub.Web", "GridironGrub.Web\GridironGrub.Web.csproj", "{D07B34DE-2685-45D7-8F17-5C68F32B97E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridironGrub.Data", "GridironGrub.Data\GridironGrub.Data.csproj", "{D9303E30-42AC-4D86-9CC8-BCA736FD9CD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridironGrub.Models", "GridironGrub.Models\GridironGrub.Models.csproj", "{C9CB5D1B-C26B-4E14-92FC-D145FE0A1D53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D07B34DE-2685-45D7-8F17-5C68F32B97E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07B34DE-2685-45D7-8F17-5C68F32B97E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07B34DE-2685-45D7-8F17-5C68F32B97E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07B34DE-2685-45D7-8F17-5C68F32B97E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9303E30-42AC-4D86-9CC8-BCA736FD9CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9303E30-42AC-4D86-9CC8-BCA736FD9CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9303E30-42AC-4D86-9CC8-BCA736FD9CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9303E30-42AC-4D86-9CC8-BCA736FD9CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CB5D1B-C26B-4E14-92FC-D145FE0A1D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CB5D1B-C26B-4E14-92FC-D145FE0A1D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CB5D1B-C26B-4E14-92FC-D145FE0A1D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CB5D1B-C26B-4E14-92FC-D145FE0A1D53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

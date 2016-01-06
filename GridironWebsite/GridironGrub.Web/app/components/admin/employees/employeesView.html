@@ -1,0 +1,24 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btn-group btn-group-justified">
+                <a ng-click="vm.goToNew();" class="btn btn-default">Create New Employee</a>
+                <a ng-click="vm.goToAll();" class="btn btn-default">All Employees</a>
+                <a ng-click="vm.goToFind();" class="btn btn-default">Find by Username</a>
+            </div>
+            <br />
+            <div class="row" ng-show="vm.showNew">
+                <div ng-include="'/app/components/admin/employees/views/new.html'"></div>
+            </div>
+            <div class="row" ng-show="vm.showAll">
+                <div ng-include="'/app/components/admin/employees/views/all.html'"></div>
+            </div>
+            <div class="row" ng-show="vm.showFind">
+                <div ng-include="'/app/components/admin/employees/views/find.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modals-->
+<div ng-include="'/app/components/admin/employees/views/modals.html'"></div>

@@ -1,0 +1,18 @@
+﻿<div class="container-fluid" style="padding-left:30px;">
+    <h1>Enter your seat number below.</h1>
+    <br /><br />
+    <div class="form">
+        <fieldset ng-disabled="vm.isLoading">
+            <div class="form-group">
+                <label class="control-label" for="focusedInput">Seat</label>
+                <input class="form-control" id="focusedInput" type="number" placeholder="Seat Id #" ng-model="vm.seatId">
+            </div>
+            <div>
+                <label class="item item-input">
+                    <a class="btn btn-primary" ng-click="vm.goToLoading();">Submit</a>
+                </label>
+            </div>
+            {{vm.scanErrorMessage}}
+        </fieldset>
+    </div>
+</div>

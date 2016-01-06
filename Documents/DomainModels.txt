@@ -1,0 +1,43 @@
+<h2 class="has-header">Complete Profile</h2>
+<h6>* = Required Field </h6>
+<div class="list">
+  <label class="item item-input">
+    <input type="text" placeholder="First Name Last Name">
+  </label>
+  <label class="item item-input">
+    <input type="email" placeholder="Email">
+  </label>
+</div>
+
+<div class="row">
+<div class="col">
+<h4>Gender</h4>
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Male
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+    <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Female
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+</div>
+
+	<div class="col">
+		<h4>* Birthdate</h4>
+			<label class="item item-input">
+			  <span class="input-label">Date</span>
+			  <input type="date">
+			</label>
+	</div>
+</div>
+</br>
+</br>
+<div>
+<input type="submit" value="Sign in to PayPal!">
+</div>

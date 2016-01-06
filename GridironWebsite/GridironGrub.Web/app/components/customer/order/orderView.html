@@ -1,0 +1,22 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="row" ng-show="vm.showItem">
+            <div ng-include="'/app/components/customer/order/views/item.html'"></div>
+        </div>
+        <div class="row" ng-show="vm.showCart">
+            <div ng-include="'/app/components/customer/order/views/cart.html'"></div>
+        </div>
+        <div class="row" ng-show="vm.showWarning">
+            <div ng-include="'/app/components/customer/order/views/warning.html'"></div>
+        </div>
+        <div class="row" ng-show="vm.showDescription">
+            <div ng-include="'/app/components/customer/order/views/description.html'"></div>
+        </div>
+        <div class="row" ng-show="vm.showPayment">
+            <div ng-include="'/app/components/customer/order/views/payment.html'"></div>
+        </div>
+        <div class="row" ng-show="vm.showConfirmation">
+            <div ng-include="'/app/components/customer/order/views/confirmation.html'"></div>
+        </div>
+    </div>
+</div>

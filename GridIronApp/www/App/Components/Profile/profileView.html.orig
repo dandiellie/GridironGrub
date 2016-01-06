@@ -1,0 +1,64 @@
+<<<<<<< HEAD
+<h2 class="has-header">Complete Profile</h2>
+<h6>* = Required Field </h6>
+<div class="list">
+  <label class="item item-input">
+    <input type="text" placeholder="First Name Last Name">
+  </label>
+  <label class="item item-input">
+    <input type="email" placeholder="Email">
+  </label>
+</div>
+
+<div class="row">
+<div class="col">
+<h4>Gender</h4>
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Male
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+    <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Female
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+</div>
+
+	<div class="col">
+		<h4>* Birthdate</h4>
+			<label class="item item-input">
+			  <span class="input-label">Date</span>
+			  <input type="date">
+			</label>
+=======
+<h2 class="has-header">Profile Screen!</h2>
+<div ng-controller="ProfileController as vm">
+	<div ng-hide="editorEnabled">
+		<h3>First Name: </h3> <p>{{vm.file.firstName}}</p> 
+		<h3>Last Name: </h3> <p>{{vm.file.lastName}}</p>
+		<h3>Img URL: </h3> <p>{{vm.file.imageUrl}}</p>
+		<h3>Birthday: </h3> <p>{{vm.file.birthday | date: "MM/dd/yyyy"}}</p>
+		<h3>Email: </h3> <p>{{vm.file.email}}</p>
+		<h3>Gender: </h3> <p>{{vm.file.gender}}</p>
+		<button ng-click="enableEditor()">Edit</button>
+	</div>
+	<div ng-show="editorEnabled">
+		<h3>First Name: </h3> <input ng-model-options="{ updateOn: 'blur' }" ng-model="vm.file.firstName" ng-show="editorEnabled">
+		<h3>Last Name: </h3> <input ng-model-options="{ updateOn: 'blur' }" ng-model="vm.file.lastName" ng-show="editorEnabled">
+		<h3>Img URL: </h3> <input ng-model-options="{ updateOn: 'blur' }" ng-model="vm.file.imageUrl" ng-show="editorEnabled">
+		<h3>Gender: </h3> <input ng-model-options="{ updateOn: 'blur' }" ng-model="vm.file.gender" ng-show="editorEnabled">
+		<button  ng-click="save(vm.file)">Save</button>
+		<button ng-click="disableEditor()">Cancel</button>
+>>>>>>> 755ba04ecc32293fc247d753973f63ffda2932a6
+	</div>
+</div>
+</br>
+</br>
+<div>
+<input type="submit" value="Sign in to PayPal!">
+</div>

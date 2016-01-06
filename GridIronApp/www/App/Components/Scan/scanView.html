@@ -1,0 +1,20 @@
+<div class="has-header" ng-controller="scanController">
+	
+	<h2>QR Code Scanner</h2>
+	<h5>Scan the back of the seat in front of you.</h5>
+	<br/><br/>
+	<button class="button" ng-click="scanBarcode();">Scan</button>
+	<br/><br/>
+	<h5>Or enter your seat number below.</h5>
+	<div class="form">
+		<fieldset>
+			<label class="item item-input">
+				<input type="number" placeholder="Seat Id #" ng-model="seatId">
+			</label>
+			<label class="item item-input">
+				<input type="submit" ng-click="getRestaurants(seatId);">
+			</label>
+		</fieldset>
+	</div>
+
+</div>
